@@ -1,0 +1,74 @@
+.container {
+  max-width: 1300px;
+  height: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-image: url(img/bar.png);
+  position: relative;
+}
+
+.drinks-title {
+  margin: 0;
+  font-size: 18px;
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.drink-select-list {
+  width: 160px;
+  border-radius: 10px;
+  padding: 5px;
+}
+.form-wrapper {
+  position: absolute;
+  left: 660px;
+  top: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.random-button {
+  position: absolute;
+  left: 470px;
+  top: 240px;
+}
+.submit-button {
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+}
+.cocktail-content {
+  background-color: rgb(255, 255, 255);
+
+  background-image: url(img/Cocktail-content.png);
+  z-index: 1;
+  width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.image-cocktail {
+  width: 200px;
+}
+/* .random-cocktail {
+  background-color: rgb(247, 153, 211);
+  z-index: 1;
+  width: 500px;
+} */
+.ul-cocktail-content {
+  list-style-type: none;
+}
+.cocktail-content-title {
+  color: black;
+  background-color: rgb(246, 247, 240);
+}
+.cocktail-content-p {
+  font-weight: bold;
+  background-color: rgb(246, 247, 240);
+}
+.drink-content-instruction {
+  font-weight: bold;
+  background-color: rgb(246, 247, 240);
+}
+.cocktail-content-instructions {
+  background-color: rgb(246, 247, 240);
+}
