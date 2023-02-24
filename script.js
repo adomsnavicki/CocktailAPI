@@ -43,19 +43,29 @@ function createCocktailList() {
   createDrinksContent("Wines:", "search.php?s=wine", formWine, "wine-list");
 }
 createCocktailList();
+let randomMachineDiv = document.getElementById("randomDiv");
 
+let randomMachineText = document.getElementById("randomtext");
 let cocktailDiv = null;
 
 let imgElement = null;
 const formRandom = document.getElementById("random-form");
-
+const buttonRemove = document.createElement("button");
+buttonRemove.classList.add("close-cocktail-content");
+buttonRemove.textContent = "X";
+buttonRemove.addEventListener("click", () => {
+  window.location.reload();
+  cocktailDiv.remove();
+  imgElement.remove();
+});
 function createRandomElements(data) {
   if (!cocktailDiv) {
     cocktailDiv = document.createElement("div");
-
+    cocktailDiv.classList.add("random-cocktail-content");
     imgElement = document.createElement("img");
-    formRandom.after(cocktailDiv);
-    cocktailDiv.after(imgElement);
+    imgElement.classList.add("random-img");
+
+    formRandom.after(cocktailDiv, imgElement);
   } else {
     cocktailDiv.innerHTML = "";
   }
@@ -66,12 +76,22 @@ function createRandomElements(data) {
   const h4Element = document.createElement("h4");
   const pElement = document.createElement("p");
 
-  cocktailDiv.append(h2Element, h3Element, ulElement, h4Element, pElement);
+  cocktailDiv.append(
+    buttonRemove,
+    h2Element,
+    h3Element,
+    ulElement,
+    h4Element,
+    pElement
+  );
 
   data.drinks.forEach((element) => {
+    randomMachineDiv.classList.add("active");
     h2Element.textContent = element.strDrink;
+    randomMachineText.textContent = element.strDrink;
     h3Element.textContent = "Ingredients:";
     imgElement.src = element.strDrinkThumb;
+    imgElement.style.width = "500px";
     h4Element.textContent = "Instructions:";
     pElement.textContent = element.strInstructions;
     const maxIngridiants = 5;
