@@ -72,3 +72,10 @@
 .cocktail-content-instructions {
   background-color: rgb(246, 247, 240);
 }
+.close-cocktail-content {
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  font-size: large;
+  font-weight: 900;
+}

@@ -14,7 +14,12 @@ export function createDrinksContent(
 ) {
   const cocktailDiv = document.createElement("div");
   cocktailDiv.classList.add("cocktail-content");
-
+  const closeCardButton = document.createElement("button");
+  closeCardButton.classList.add("close-cocktail-content");
+  closeCardButton.textContent = "X";
+  closeCardButton.addEventListener("click", () => {
+    cocktailDiv.remove();
+  });
   const drinkTitle = document.createElement("h1");
   drinkTitle.classList.add("drinks-title");
   const h2Element = document.createElement("h2");
@@ -69,6 +74,7 @@ export function createDrinksContent(
         data.drinks.forEach((element) => {
           formElement.after(cocktailDiv);
           cocktailDiv.append(
+            closeCardButton,
             h2Element,
             h3Element,
             ulElement,
